@@ -58,7 +58,10 @@
         
           copyToRoot = pkgs.buildEnv {
             name = "image-root";
-            paths = [pkgs.coreutils-full];
+            paths = [
+              pkgs.coreutils-full
+              pkgs.nodejs
+            ];
             pathsToLink = ["/bin"]; # add coreutuls (which includes sleep) to /bin
           };
         };
